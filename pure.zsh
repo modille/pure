@@ -208,7 +208,7 @@ prompt_pure_precmd() {
 	unset prompt_pure_cmd_timestamp
 
 	# Shows the full path in the title.
-	prompt_pure_set_title 'expand-prompt' '%~'
+	prompt_pure_set_title 'expand-prompt' '%1~'
 
 	# Modify the colors if some have changed..
 	prompt_pure_set_colors

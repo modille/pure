@@ -136,6 +136,9 @@ prompt_pure_preprompt_render() {
 		preprompt_parts+='%F{$prompt_pure_colors[suspended_jobs]}✦'
 	fi
 
+	# Start with a #
+	preprompt_parts+=('%F{8}#')
+
 	# Username and machine, if applicable.
 	[[ -n $prompt_pure_state[username] ]] && preprompt_parts+=($prompt_pure_state[username])
 

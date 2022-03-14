@@ -805,7 +805,12 @@ prompt_pure_setup() {
 
 	# The `add-zle-hook-widget` function is not guaranteed to be available.
 	# It was added in Zsh 5.3.
-	autoload -Uz +X add-zle-hook-widget 2>/dev/null
+	#
+	# For some reason including the `+X` flag leads to `make` saying:
+	#     zsh: make: function definition file not found
+	# And even without the `+X` flag, the vim prompt features below still work.
+	#
+	autoload -Uz add-zle-hook-widget 2>/dev/null
 
 	# Set the colors.
 	typeset -gA prompt_pure_colors_default prompt_pure_colors
